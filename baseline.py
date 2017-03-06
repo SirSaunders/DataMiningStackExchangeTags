@@ -40,7 +40,7 @@ for filename in FILENAMES_PERCENT_MAPPING.keys():
     FILENAMES_PERCENT_MAPPING[filename] = (float(count_of_tags_in_corpus) / float(total_tag_count)) * 100.0
 
 # Print out our dictionary for percents
-print "PERCENT OF TAGS APPEARING IN TITLE OR CONTENT BY FILE"
+print ( "PERCENT OF TAGS APPEARING IN TITLE OR CONTENT BY FILE")
 pprint(FILENAMES_PERCENT_MAPPING, indent=True)
 
 # Output
@@ -58,13 +58,13 @@ pprint(FILENAMES_PERCENT_MAPPING, indent=True)
 # To do this, we need all of the combinations of files in our list.
 # E.g. we need to compare biology with everything else, cooking with everything else, etc.
 filename_combinations_list = combinations(FILENAMES_ALL_TAGS.keys(), 2)
-print "filename1 : filename2: percent_shared1 : perecent_shared2"
+print( "filename1 : filename2: percent_shared1 : perecent_shared2")
 # Loop through the different combinations and determine percentage of shared tags
 for filename_one, filename_two in filename_combinations_list:
     set_intersection_size = len(FILENAMES_ALL_TAGS[filename_one].intersection(FILENAMES_ALL_TAGS[filename_two]))
     filename_one_tags_in_filename_two = float(set_intersection_size) / float(len(FILENAMES_ALL_TAGS[filename_one]))
     filename_two_tags_in_filename_one = float(set_intersection_size) / float(len(FILENAMES_ALL_TAGS[filename_two]))
-    print filename_one + " : " + filename_two + " : " + str(filename_two_tags_in_filename_one * 100.0) + " : " + str(filename_one_tags_in_filename_two * 100.0)
+    print( filename_one + " : " + filename_two + " : " + str(filename_two_tags_in_filename_one * 100.0) + " : " + str(filename_one_tags_in_filename_two * 100.0))
 
 
 # Output
